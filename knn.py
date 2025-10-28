@@ -1,4 +1,4 @@
-### Small Python code snippet to implement KNN###
+### Small Python code snippet to implement kNN###
 ### Created by Arijit Chakraborty ###
 
 ### Dataset download link: https://archive.ics.uci.edu/dataset/53/iris ###

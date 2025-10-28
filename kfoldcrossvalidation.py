@@ -1,4 +1,4 @@
-### Small Python code snippet to implement KNN cross validation###
+### Small Python code snippet to implement k-fold cross validation###
 ### Created by Arijit Chakraborty ###
 
 ### Kept the downloaded dataset in folder callied 'Iris' under the parent folder structure###
@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split # Used ONLY for the Part (b) comparison
 
-### --- A. Data Loading and Preprocessing (Part (a) - Step 2 & 3) --- ###
+###Data Loading and Preprocessing
 ###Define the relative path to the dataset###
 DatasetPath= 'iris/iris.data' ## -> Dataset is kept in this location##
 try:
@@ -33,8 +33,8 @@ scaler=StandardScaler()
 X_standardized=scaler.fit_transform(X_features)
 print("\nDataset loaded and preprocessed successfully.")
 
-### --- B. K-Fold Cross-Validation Function --- ###
-###Implements K-Fold Cross-Validation logic strictly from scratch###
+###K-Fold Cross-Validation Function###
+###Implements K-Fold Cross-Validation logic from scratch###
 def k_fold_cross_validation(model,X_data,y_data,k_folds):
     ###Combine X and y into one array for synchronous shuffling###
     combinedData= num.hstack((X_data, y_data[:, num.newaxis]))   
@@ -118,7 +118,7 @@ for i in range(numberrepeats):
 print(f"Simple Split Accuracies: {simplesplitresults}")
 
 
-### --- D. Visualization  --- ###
+###Visualization###
 ###Created a single figure with three subplots###
 fig, axes = plot.subplots(1, 3, figsize=(20, 7)) 
 fig.suptitle('\nModel Performance and Hyperparameter Tuning Analysis', fontsize=16)
@@ -146,7 +146,6 @@ ax2.set_xlabel('Random Split Instance')
 ax2.grid(axis='y', linestyle='--')
 ax2.legend()
 ax2.set_ylim(y_min, y_max)
-### --- E. Bonus Challenge Hyperparameter Tuning --- ###
 ### Use Cross-Validation for Hyperparameter Tuning: Loop through n_neighbors=1 to 25###
 krange =range(1, 26)
 ktunmeanAccuracies = []

@@ -19,7 +19,7 @@ scaler = StandardScaler()
 x_train_scaled = scaler.fit_transform(x_train)
 x_test_scaled = scaler.transform(x_test)
 
-# --- Part(a): Implementation of Linear Regression Model #
+#Implementation of Linear Regression Model#
 ###Assumption: For siumplified example the dataset is 2D###
 ###Section to define CLASS###
 ###Creating CLASS definition for LINEAR REGRESSION###
@@ -52,7 +52,7 @@ class LinearRegression:
     def predict(self, x):
         return x.dot(self.weights)+self.bias
 
-# --- Part(b): Evaluation and Visualisation #
+#Evaluation and Visualisation#
 ###Section to train the model and perform evaluation###
 learningRate = 0.01
 numIterations = 10000 
